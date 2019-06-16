@@ -1,24 +1,49 @@
+#contenido{
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
 .cuerpo{
   background: #000000;
-  margin-left: 8em;
-  margin-right: 8em;
   font-style: italic;
   font-family: 'DancingScriptRegular';
   font-weight: normal;
   font-style: normal;
 }
-#encabezado{
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+#cabecera{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   background-color: #5b7989;
+  animation: XAnimacion 2s;
+}
+@-webkit-keyframes XAnimacion{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
 }
 .titulo{
   color: #ffffff;
   text-shadow: 0px 2px 2px #02010a;
 }
-.menu{
+li a{
   color: #ffffff;
 }
+body#inicio #menu-principal li.inicio a{
+  text-decoration: none;
+}
+body#paisajes #menu-principal li.paisajes a{
+  text-decoration: none;
+}
+body#retratos #menu-principal li.retratos a{
+  text-decoration: none;
+}
+
 #div_uno{
     width: 45%;
     height: auto;
@@ -37,9 +62,6 @@ li {
   display: block;
 	padding-right: 15px;
 	padding-left: 5px;
-}
-#menu-principal a:link active{
-text-decoration: none;
 }
 .imagen_central{
   background-color: #82c3a6;
@@ -69,7 +91,8 @@ text-decoration: none;
   height: auto;
   display: flex;
   flex-flow:wrap;
-  margin: 0px auto;
+  columns: 2;
+  margin: 0 auto;
   text-align:center;
   justify-content: center;
 }
@@ -91,7 +114,7 @@ text-decoration: none;
   vertical-align:middle;
 }
 .imagen_cent1{
-  width: 250px;
+  width: 230px;
   height: auto;
   margin-left: 25px;
   margin-right: 25px;
@@ -145,23 +168,33 @@ text-decoration: none;
 
 @media screen and (max-width:900px) {
 /* reglas CSS */
-  #encabezado{
-      display:grid;
+#contenido{
+  width: 100%;
+  height: auto;
+}
+.cuerpo{
+  background: #000000;
+}
+#cabecera{
+      display:inline-block;
       width: 100%;
   }
-  #div_uno{
-    display: flex;
-    flex-flow: row;
-    flex-direction: row;
+#div_uno{
     width: 100%;
+    display: inline-grid;
+    justify-content: center;
     text-align: center;
   }
-  .flex1{
-    display: grid;
+.flex1{
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    columns: 1;
+
   }
-  .imagen_cent{
+.imagen_cent{
     width: 100%;
     height: auto;
     margin-left: 0px;
@@ -169,38 +202,41 @@ text-decoration: none;
     vertical-align: middle;
   }
 
-  .imagen_cent1{
-    width: 75%;
+.imagen_cent1{
+    width: 55%;
     height: auto;
-    margin-left: 0px;
-    margin-right: 0px;
-    vertical-align: middle;
+    aling:center;
   }
+}
 
-  .flex2{
+.flex2{
     display: block;
     columns: 1;
     width: 100%;
     height: auto;
   }
-  #piepagina{
+#piepagina{
     margin-left: 30px;
     line-height: 20px;
     vertical-align: middle;
   }
-
-
-}
-@media screen and (max-width:1024px) and (min-width:900px) {
+@media screen and  (min-width:900px) {
   /* reglas CSS */
-  #div_uno{
+ #contenido{
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+  }
+.cuerpo{
+    background: #000000;
+  }
+#div_uno{
     display: inline-block;
   }
-  .flex1{
+.flex1{
     display: flex;
   }
-
-  .flex2{
+.flex2{
     display:flex;
     columns: 4;
   }
